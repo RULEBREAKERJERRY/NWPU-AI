@@ -16,11 +16,12 @@ typedef struct {
 
 G build(int n);
 void DIJKSTRA(G graph);
+void dfs(int start, int end);
 int PATH[MAXN], distance[MAXN];
 int visit[MAXN];
 
 int main() {
-    int n;
+    int n, start, end;
     scanf("%d", &n);
     G graph = build(n);
     DIJKSTRA(graph);
@@ -105,4 +106,13 @@ void DIJKSTRA(G graph) {
             }
         }
     }
+}
+
+void dfs(int start, int end) {
+    if (start == end) {
+        printf("%d\n", start);
+        return;
+    }
+    dfs(start, PATH[end]);
+    printf("%d\n", end);
 }

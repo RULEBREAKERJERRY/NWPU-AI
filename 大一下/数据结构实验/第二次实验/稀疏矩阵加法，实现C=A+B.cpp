@@ -18,7 +18,7 @@ int main() {
     scanf("%d %d %d %d", &m, &n, &lenA, &lenB);
     TSMatrix *A = initTSMatrix(lenA); //初始化A矩阵
     TSMatrix *B = initTSMatrix(lenB); //初始化B矩阵
-    int eleA, eleB, i, row, col, num;
+    int i, row, col, num;
     for (i = 1; i <= lenA; i++) { //读入矩阵A
         scanf("%d %d %d", &row, &col, &num);
         A->data[i].e = num;
@@ -44,6 +44,7 @@ TSMatrix *initTSMatrix(int length) { //初始化函数
     t->m = 0;
     t->n = 0;
     t->len = length;
+    return t;
 }
 void add(TSMatrix *A, TSMatrix *B, TSMatrix *C) { //将矩阵A和B相加的结果存入C矩阵中
     int i, j;

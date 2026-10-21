@@ -67,6 +67,7 @@ int get_color(char c) {
         return 3;
     if (c == 'G')
         return 4;
+    return -1;
 }
 int get_dir(char d) {
     if (d == 'N')
@@ -77,6 +78,7 @@ int get_dir(char d) {
         return 2;
     if (d == 'W')
         return 3;
+    return -1;
 }
 bool valid(int x, int y, int dir, int col) {
     return x > 0 && y > 0 && x <= 20 && y <= 20 && map[x][y] == '.' && !vis[x][y][dir][col] &&
